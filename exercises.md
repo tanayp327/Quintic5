@@ -101,10 +101,9 @@
         </table>
     </div>
     <script>
-        const apiUrl = 'http://127.0.0.1:8086/api/exercises';
         // function to fetch exercises and update the table
         function fetchExercises() {
-            fetch(apiUrl)
+            fetch('http://127.0.0.1:8086/api/exercises')
                 .then(response => response.json())
                 .then(data => {
                     const tableBody = document.querySelector('#exercise-table tbody');
@@ -130,7 +129,7 @@
             const formData = new FormData(createForm);
             const exerciseData = {};
             formData.forEach((value, key) => exerciseData[key] = value);
-            fetch(apiUrl + '/create', {
+            fetch('http://127.0.0.1:8086/api/exercises/create', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(exerciseData)
