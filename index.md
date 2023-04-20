@@ -9,11 +9,10 @@
       <a href="#" class="logo">QUINC</a>
       <ul>
         <li><a href="/" class="">Home</a></li>
-        <li><a href="Exercises">Exercises</a></li>
+        <li><a href="exercises">Exercises</a></li>
         <li><a href="Movies">Movies</a></li>
         <li><a href="Cities">Cities</a></li>
       </ul>
     </header>
   </body>
 </html>
-

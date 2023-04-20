@@ -6,8 +6,7 @@ author: Paaras Purohit, Chinmay Ramamurthy, Raunak Mondal, Tanay Patel, Qais Jam
 categories: [student]
 type: ap
 week: 30
-Developing Frontend/Backend Applications
-Defining how to get started with Python Development and APIs. We improve on 1st trimester curriculum and add visualization to these concepts.
+description: Developing Frontend/Backend Applications. Defining how to get started with Python Development and APIs. We improve on 1st trimester curriculum and add visualization to these concepts.
 ---
 
 # Developing Frontend/Backend Applications
