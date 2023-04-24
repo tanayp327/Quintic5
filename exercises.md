@@ -129,7 +129,7 @@
             const formData = new FormData(createForm);
             const exerciseData = {};
             formData.forEach((value, key) => exerciseData[key] = value);
-            fetch('http://127.0.0.1:8086/api/exercises/create', {
+            fetch('hhttp://127.0.0.1:8086/api/exercises/create', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(exerciseData)
