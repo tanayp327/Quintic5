@@ -1,0 +1,16 @@
+h1{
+    text-align:center;
+    text-shadow: 2px 2px #8e8e8e;
+    color:rgb(0, 0, 0);
+}
+
+h2{
+    text-align:center;
+    padding: 30px;
+    color:#000000;
+}
+
+p{
+    text-align:center;
+    color:#494949;
+}
