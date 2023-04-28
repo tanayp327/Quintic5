@@ -38,3 +38,9 @@
 <h2>Grading/Checking Work</h2>
 <p>After the code for each activity on the website is shown, there will be a link to a Slack server where users can join, post, and talk about their beginner creations with web development.</p>
 <hr class="line">
+
+<h2>Hacks</h2>
+<p>Finished Notes for First Pages (0.3) </p>
+<p>Finished Notes for Second Pages (0.3) </p>
+<p>Create a Video that demonstrate frontend and backend (0.3) </p>
+<p>Excellence in anything will grant you extra points. (0.1) </p>
