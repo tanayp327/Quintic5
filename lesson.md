@@ -38,5 +38,9 @@
 <p>In this lesson, we will teach students how to develop backend 3rd party APIs using Python, Flask, and Pandas. We will cover the basics of APIs, how to analyze and clean data, and how to create APIs using Python.</p>
 <hr class="line">
 <h2>Grading/Checking Work</h2>
-<p>0.3 for notes on first notebook, 0.3 ofr notes on second notebook, 0.3 for video showing FE and BE integration, 0.1 for any extra</p>
-<hr class="line">
+
+<h2>Hacks</h2>
+<p>Finished Notes for First Pages (0.3) </p>
+<p>Finished Notes for Second Pages (0.3) </p>
+<p>Create a Video that demonstrate frontend and backend (0.3) </p>
+<p>Excellence in anything will grant you extra points. (0.1) </p>
