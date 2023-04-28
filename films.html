@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td{
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 10px;
+        color: #ffffff;
+      }
+      th{
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 10px;
+        color: #000000;
+        background-color: #dddddd;
+      }
+      tr:nth-child(even) {
+        background-color: #000000;
+      }
+      .button {/* formatting for buttons */
+        background-color: #d1d3d1; /* Green */
+        border: black;
+        color: rgb(0, 0, 0);
+        padding: 15px 30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        transition-duration: 0.4s;
+      }
+      .button:hover {
+        background-color: #4CAF50; /* Green */
+        color: white;
+      }
+      h6 {
+        font-size: 200%;
+        color: white
+      }
+      input {/* input box formatting */
+        width: 40%;
+        height: 5%;
+        border: 2px solid rgb(0, 0, 0);
+        border-radius: 4px;
+        background-color: #d1d3d1
+      }
+      header {
+        position: relative;
+      }
+      body {
+        position: relative;
+      }
+
+    label {
+      color: #dddddd;
+    }
+    </style>
+    <title>Developing Frontend and Backend</title>
+      <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Films API</a>
+      <ul>
+        <li><a href="/" class="">Home</a></li>
+        <li><a href="Exercises">Exercises</a></li>
+        <li><a href="/films.html">Films</a></li>
+        <li><a href="Cities">Cities</a></li>
+      </ul>
+    </header>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <form action="/action_page.php">
+    <label for="name">Name:</label>
+    <input type="text" id="Name"><br><br>
+    <label for="year">Year:</label>
+    <input type="number" id="Year"><br><br>
+    <label for="language">Language:</label>
+    <input type="text" id="Language"><br><br>
+    <label for="epcount">Episode Count:</label>
+    <input type="number" id="Epcount"><br><br>
+    <label for="eplist">Episode List(Separated by commas):</label>
+    <input type="text" id="Eplist"><br><br>
+    <label for="trailer">Trailer url(Youtube):</label>
+    <input type="url" id="Trailer"><br><br>
+  </form>
+  <p><button class="button" onclick= postFilms()>Add a Film You Watched!</button></p>
+  <br>
+  <label for="newname">Name of Film Continued:</label>
+  <input type="text" id="Newname"><br><br>
+  <label for="newepcount">Number of Episodes Watched:</label>
+  <input type="number" id="Newepcount"><br><br>
+  <label for="neweplist">Episodes Watched(Separated by commas):</label>
+  <input type="text" id="neweplist"><br><br>
+  <p><button class="button" onclick= updateFilms()>Update Your Episode List!</button></p>
+  <br>
+  <label for="delname">Name of Film to be Deleted:</label>
+  <input type="text" id="Delname"><br><br>
+  <p><button class="button" onclick= deleteHelper()>Delete a Film!</button></p>
+  <br>
+  <p><button class="button" onclick= deleteFilms('-')>Delete All the Films!</button></p>
+  <br>
+  <table id = "Films">
+    <tr>
+      <th>Name</th>
+      <th>Year</th>
+      <th>Language</th>
+      <th>Episode Count</th>
+      <th>Episode List</th>
+      <th>Trailer</th>
+    </tr>
+  </table>
+  </body>
+  <script language = "JavaScript">
+    var myFilms = [];
+    const url = "http://127.0.0.1:8086/api/films/";//getting url for API
+    const post_url = url+"create"//different urls for create, read, and delete functionality
+    const delete_url = url+"delete/";
+    const update_url = url+"update";
+    const get_options = {
+      method: 'GET', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'omit', // include, *same-origin, omit
+      headers: { 
+         'Content-Type': 'application/json'                
+      },
+    };
+    function convertToEmbedUrl(url) {
+      let regex = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+      let match = url.match(regex);
+    
+      if (match && match[2].length == 11) {
+        return `https://www.youtube.com/embed/${match[2]}`;
+      } else {
+        return "https://www.youtube.com/embed/dQw4w9WgXcQ";
+      }
+    }
+    
+    function deleteHelper(){
+      deleteFilms(document.getElementById('Delname').value);
+    }
+    function postFilms(){//function to add a new country to the API, excecuted when a user types a country into the text box and hits the check button
+      const options = {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+              name: document.getElementById("Name").value,
+              year: document.getElementById("Year").value,
+              epcount: document.getElementById("Epcount").value,
+              language: document.getElementById("Language").value,
+              trailer: document.getElementById("Trailer").value,
+              eplist: document.getElementById("Eplist").value,
+          })
+      }
+      fetch(post_url, options)
+        .then(response => {
+            if(response.status !== 200){
+                return;
+            }
+            response.json().then(data=>{
+                
+                fetchFilms()
+            })
+        })
+      }
+ 
+    function deleteFilms(name){//method to delete countries from the API when program is all finished
+          const options = {
+              method: 'DELETE'
+          }
+          const full_url = delete_url+name
+    
+          fetch(full_url, options)
+              .then(response => {
+                  if(response.status !== 200){
+                      return;
+                  }
+                  response.json().then(data=>{
+                      fetchFilms()
+                  })
+              })
+    }
+    
+    function updateFilms(){//method to delete countries from the API when program is all finished
+      const options = {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: document.getElementById("Newname").value,
+            epcount: document.getElementById("Newepcount").value,
+            eps: document.getElementById("Neweplist").value,
+        })
+      }
+      const full_url = update_url
+
+      fetch(full_url, options)
+          .then(response => {
+              if(response.status !== 200){
+                  return;
+              }
+              response.json().then(data=>{
+                  fetchFilms()
+              })
+          })
+}
+ 
+    function fetchFilms(){//Fetch list of countries from API to print at the end and compare when a new country to add to see if it's already been guessed
+          //console.log("test")
+          for(let i = document.getElementById("Films").rows.length-1; i > 0; i--){
+            document.getElementById("Films").deleterow(i);
+          }
+          fetch(url, get_options)
+              .then(response => {
+                  if(response.status !== 200){
+                      return;
+                  }
+                  response.json().then(data=>{
+                      //myFilms = []
+                      for(const row of data){
+                        let newarray = [row.name,row.year,row.language,row.epcount,row.eplist,row.trailer];
+                        let myrow = document.getElementById("Films").insertRow(-1);
+                        let mytrailer = document.createElement("iframe");
+                        //<iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_HERE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        //document.write("ghbsrhbvhugshoh");
+                        mytrailer.setAttribute("height","300");
+                        mytrailer.setAttribute("width","400");
+                        mytrailer.setAttribute("src",convertToEmbedUrl(row.trailer));
+                        mytrailer.setAttribute("frameborder","0");
+                        mytrailer.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+                        mytrailer.setAttribute("allowfullscreen",true);
+                        myrow.insertCell(0).innerHTML = row.name;
+                        myrow.insertCell(1).innerHTML = row.year;
+                        myrow.insertCell(2).innerHTML = row.language;
+                        myrow.insertCell(3).innerHTML = row.epcount;
+                        myrow.insertCell(4).innerHTML = row.eplist;
+                        myrow.insertCell(5).appendChild(mytrailer);
+                        //myFilms.push(newarray);
+                        //document.write(myFilms.length)
+                      }
+                  })
+              })     
+    }
+    fetchFilms();
+    //document.write(myFilms.length)
+    //for(let i = 0; i < myFilms.length; i++){
+
+    //}
+    //document.write(myFilms.length);
+
+  </script>
+</html>
