@@ -11,7 +11,9 @@
 <h2>Subtopics we plan on teaching</h2>
 
 <p>wget https://raw.githubusercontent.com/PaarasPurohit/apcompsciportfolio/master/_notebooks/2023-04-18-quintinpartone.ipynb</p>
-
+<a href = https://github.com/tanayp327/Quintic5.git> Frontend Repo to Clone</a>
+<a href = https://github.com/tanayp327/Quintic5Flask.git> Backend Repo to Clone</a>
+    
 <p>1. Setting up machines with Conda Scripts</p>
 <p>2. Setting up GitHub Pages with FastPages features</p>
 <p>3. Building requirements and pull requests in GitHub</p>
@@ -36,5 +38,5 @@
 <p>In this lesson, we will teach students how to develop backend 3rd party APIs using Python, Flask, and Pandas. We will cover the basics of APIs, how to analyze and clean data, and how to create APIs using Python.</p>
 <hr class="line">
 <h2>Grading/Checking Work</h2>
-<p>After the code for each activity on the website is shown, there will be a link to a Slack server where users can join, post, and talk about their beginner creations with web development.</p>
+<p>0.3 for notes on first notebook, 0.3 ofr notes on second notebook, 0.3 for video showing FE and BE integration, 0.1 for any extra</p>
 <hr class="line">
