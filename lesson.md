@@ -14,6 +14,7 @@
 <a href = "https://raw.githubusercontent.com/tanayp327/Quintic5Flask/main/2023-04-28-frontendBackend.ipynb"> WGET for Subtopics 4-5 </a><br>
 <a href = "https://github.com/tanayp327/Quintic5.git"> Frontend Repo to Clone</a><br>
 <a href = "https://github.com/tanayp327/Quintic5Flask.git"> Backend Repo to Clone</a><br>
+<a href = "https://colab.research.google.com/drive/1uW_W-TaIjO8TH29JcE5kF5HFpYaaq0-l?usp=sharing"> 3rd Party API</a><br>
 
 <p>1. Setting up machines with Conda Scripts</p>
 <p>2. Setting up GitHub Pages with FastPages features</p>
