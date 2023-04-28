@@ -10,10 +10,10 @@
 <hr class="line">
 <h2>Subtopics we plan on teaching</h2>
 
-<a href = https://raw.githubusercontent.com/PaarasPurohit/apcompsciportfolio/master/_notebooks/2023-04-18-quintinpartone.ipynb> WGET for Subtopics 1-3 </a>
-<a href = https://raw.githubusercontent.com/PaarasPurohit/apcompsciportfolio/master/_notebooks/2023-04-18-quintinpartone.ipynb> WGET for Subtopics 4-5 </a>
-<a href = https://github.com/tanayp327/Quintic5.git> Frontend Repo to Clone</a>
-<a href = https://github.com/tanayp327/Quintic5Flask.git> Backend Repo to Clone</a>
+<a href = https://raw.githubusercontent.com/PaarasPurohit/apcompsciportfolio/master/_notebooks/2023-04-18-quintinpartone.ipynb> WGET for Subtopics 1-3 </a><br>
+<a href = https://raw.githubusercontent.com/PaarasPurohit/apcompsciportfolio/master/_notebooks/2023-04-18-quintinpartone.ipynb> WGET for Subtopics 4-5 </a><br>
+<a href = https://github.com/tanayp327/Quintic5.git> Frontend Repo to Clone</a><br>
+<a href = https://github.com/tanayp327/Quintic5Flask.git> Backend Repo to Clone</a><br>
 
 <p>1. Setting up machines with Conda Scripts</p>
 <p>2. Setting up GitHub Pages with FastPages features</p>
