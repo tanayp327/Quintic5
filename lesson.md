@@ -10,11 +10,14 @@
 <hr class="line">
 <h2>Subtopics we plan on teaching</h2>
 
+<p>wget https://raw.githubusercontent.com/PaarasPurohit/apcompsciportfolio/master/_notebooks/2023-04-18-quintinpartone.ipynb</p>
+
 <p>1. Setting up machines with Conda Scripts</p>
 <p>2. Setting up GitHub Pages with FastPages features</p>
 <p>3. Building requirements and pull requests in GitHub</p>
 <p>4. Fetching and filtering content using JavaScript, HTML, CSS</p>
 <p>5. Developing Backend 3rd Party APIs with analysis and cleaning Python, Flask, Pandas</p>
+
 
 <h2>Lesson Plans</h2>
 <p>--Lesson 1: Setting up machines with Conda Scripts--</p>
