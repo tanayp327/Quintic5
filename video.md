@@ -21,10 +21,6 @@ src="https://www.youtube.com/embed/01l3qCNKCk4">
 </iframe></div>
 <br>
 
-<div style="text-align:center;">
-<iframe width="420" height="315"
-src="https://www.youtube.com/embed/01l3qCNKCk4">
-</iframe></div>
 
   </body>
 </html>
