@@ -4,13 +4,13 @@
     margin: 0;
     padding:0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Times New Roman', Times, serif;
 }
 
 body
 {
     min-height: 100vh;
-    background: linear-gradient(#2b1055, #7597de);
+    background: linear-gradient(#5c0303, #bc8e04);
 }
 
 video{

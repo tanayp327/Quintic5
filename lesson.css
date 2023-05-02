@@ -1,6 +1,6 @@
 h1{
     text-align:center;
-    text-shadow: 2px 2px #8e8e8e;
+    text-shadow: 2px 2px #ffffff;
     color:rgb(0, 0, 0);
 }
 
@@ -16,5 +16,5 @@ p{
 }
 
 .line {
-    border: 10px solid rgb(81, 81, 81);
+    border: 10px solid rgb(246, 1, 1);
 }
